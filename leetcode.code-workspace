@@ -1,0 +1,150 @@
+{
+
+
+	"folders": [
+		{
+			"path": "."
+		}
+  ],
+  //这里的设置其实就是工作区设置，其可以在这个工作区覆盖用户本身的默认设置
+  "settings": {  "workbench.iconTheme": "vscode-icons",
+  "files.associations": {
+    ".cjson": "jsonc",
+    ".wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "editor.renderIndentGuides": false,
+  "window.zoomLevel": 1,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "files.autoSave": "afterDelay",
+  "editor.minimap.enabled": true,
+  "breadcrumbs.enabled": true,
+  "workbench.colorTheme": "Monokai",
+  "editor.mouseWheelZoom": true,
+
+  "update.enableWindowsBackgroundUpdates": true,
+  "background.enabled": true,
+  "background.customImages": [""],
+  "background.style": {
+    "content": "’’",
+    "pointer-events": "none",
+    "position": "absolute",
+    "z-index": "99999",
+    "width": "100%",
+    "height": "100%",
+    "background-position": "100% 100%",
+    "background-repeat": "no-repeat",
+    "opacity": 0.2
+  },
+  "background.useFront": true,
+  "background.useDefault": false,
+  "git.ignoreMissingGitWarning": true,
+  //"editor.fontFamily": "微软雅黑，Consolas, mononoki,'Courier New', monospace",
+  "editor.renderLineHighlight": "none",
+  "editor.lineHeight": 18,
+  "editor.roundedSelection": false,
+  "editor.fontSize": 10,
+  "workbench.colorCustomizations": {
+    "[Quiet Light]": {
+      "editor.foreground": "#201515",
+      "editor.selectionHighlightBorder": "#94767c",
+      "editor.selectionHighlightBackground": "#ff0078",
+      "editorIndentGuide.activeBackground": "#81868d",
+      "editorBracketMatch.background": "#ca9fdb5e",
+      "editorBracketMatch.border": "#ff0000",
+      "tab.activeBackground": "#ad9cd4",
+      "textLink.foreground": "#d6561a",
+      "descriptionForeground": "#ff0000",
+      "selection.background": "#b98cd6",
+      "textBlockQuote.background": "#b89a9a",
+      "textSeparator.foreground": "#86c2df"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Quiet Light]": {
+      /* "comments": "#82e0aa",
+  "strings": "#519657",
+  "functions": "#7e57c2",
+  "keywords": "#8e1da1",
+  "variables":"#e57373",
+  "numbers": "#e62020", */
+      "comments": "#82e0aa", // 注释
+      "keywords": "#0a0", // 关键字
+      "variables": "#f00", // 变量名
+      "strings": "#e2d75dbd", // 字符串
+      "functions": "#5b99fcc9", // 函数名
+      "numbers": "#AE81FF", // 数字
+
+      "textMateRules": [
+        {
+          "name": "Comment",
+          "scope": ["comment"],
+          "settings": {
+            "foreground": "#a7cca8",
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] PHP Punctuation Variable Definition",
+          "scope": "punctuation.definition.variable.php",
+          "settings": {
+            "foreground": "#e57373"
+          }
+        },
+        {
+          "name": "String",
+          "scope": ["string"],
+          "settings": {
+            "foreground": "#32a504",
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "HTML:Tags",
+          "scope": [
+            "meta.tag",
+            "punctuation.definition.tag.html",
+            "punctuation.definition.tag.begin.html",
+            "punctuation.definition.tag.end.html"
+          ],
+          "settings": {
+            "foreground": "#4b4444",
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "HTML:Tag Names",
+          "scope": "entity.name.tag",
+          "settings": {
+            "foreground": "#a617e9",
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "HTML: Attribute Names",
+          "scope": [
+            "meta.tag entity.other.attribute-name",
+            "entity.other.attribute-name.html"
+          ],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#f31616"
+          }
+        },
+        {
+          "name": "Operator",
+          "scope": "keyword.operator",
+          "settings": {
+            "foreground": "#e21d1d",
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  },}
+}

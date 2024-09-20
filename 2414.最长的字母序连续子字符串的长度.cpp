@@ -54,7 +54,7 @@
 class Solution {
 public:
     int longestContinuousSubstring(string s) {
-        return 0
+        return 0;
     }
 };
 // @lc code=end
