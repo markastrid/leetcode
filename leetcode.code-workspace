@@ -17,7 +17,6 @@
     "wxml": "html"
   },
   "minapp-vscode.disableAutoConfig": true,
-  "editor.renderIndentGuides": false,
   "window.zoomLevel": 1,
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
@@ -146,5 +145,7 @@
         }
       ]
     }
-  },}
+  },
+  "editor.guides.indentation": false,
+}
 }
