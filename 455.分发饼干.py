@@ -66,10 +66,18 @@ class Solution:
         # 采取贪心的做法，从最小的饼干开始满足最小的小孩
         Length_g = len(g)
         Length_s = len(s)
-        while i < Length_g :
-          while j <Length_s:
-            if s[j]>=g[i]:
-              j++
-            i++
+        # 满足数目
+        count = 0
+        i,j=0,0
+        while i < Length_g and j < Length_s:
+            # 如果最小的饼干满足不了最小的孩子，那么这个饼干可以直接跳过了
+            while s[j] < g[i]:
+                j+=1
+                if j==Length_s:
+                  return count
+            count+=1
+            i+=1
+            j+=1
+        return count
 
-            # @lc code=end
+        # @lc code=end
