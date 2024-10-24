@@ -56,9 +56,10 @@ class Solution:
         for i in range(n-1):
             max_distance = max(max_distance, nums[i]+i)
             if i == distance:
+                # distance是当前确实能到达的最远边界
                 distance = max_distance
         # 这里跟45题不同的是这里可以直接判断distance能不能到边界，一定有个地方是到不了边界的
-        #必须让distance作为判断条件，因为它是当前走的边界
+        # 必须让distance作为判断条件，因为它是当前走的边界
         if distance >= n-1:
             return True
         return False
