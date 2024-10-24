@@ -78,9 +78,14 @@
 # @lc code=start
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        d
-
-        a = 1
-        a = 0
+        new_list = []
+        count = 0
+        for i in range(len(nums)):
+            if nums[i] != val:
+                new_list.append(nums[i])
+                count += 1
+        for i in range(len(new_list)):
+            nums[i] = new_list[i]
+        return count
 
 # @lc code=end
