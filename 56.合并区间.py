@@ -48,5 +48,13 @@
 # @lc code=start
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-
+        ans = []
+        # lambda x: x是一个匿名函数，对列表中的每个元素应用这个函数，取每个元素的第一个子元素作为排序依据
+        intervals.sort(key=lambda x: x[0])
+        for i in range(len(intervals)):
+            if not ans or intervals[i][0] > ans[-1][1]:
+                ans.append(intervals[i])
+            else:
+                ans[-1][1] = max(ans[-1][1], intervals[i][1])
+        return ans
         # @lc code=end
