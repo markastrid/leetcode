@@ -49,26 +49,24 @@
 # @lc code=start
 class Solution:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
-        count = n
-        if n == 0:
-            return True
-        if len(flowerbed) == 0:
-            return False
-        if len(flowerbed) == 1:
-            if n == 1 and flowerbed[0] == 0:
-                return True
-            return False
+        # 贪心：我们先计算最多能种植的花，再比较数目是否大于n
+        count = 0
+        # 前一个有花的下标
+        prev = -1
         for i in range(len(flowerbed)):
-            if i == 0 and flowerbed[i] == 0 and flowerbed[i+1] == 0:
-                flowerbed[i] = 1
-                count -= 1
-            if i == len(flowerbed)-1 and flowerbed[i] == 0 and flowerbed[i-1] == 0:
-                flowerbed[i] = 1
-                count -= 1
-            if i > 0 and i < len(flowerbed)-1 and flowerbed[i] == 0 and flowerbed[i-1] == 0 and flowerbed[i+1] == 0:
-                flowerbed[i] = 1
-                count -= 1
-        if count <= 0:
+            if flowerbed[i] == 1:
+                if prev < 0:
+                    count += i//2
+                else:
+                    count += (i-prev-2)//2
+                prev = i
+            if count >= n:
+                return True
+        if prev < 0:
+            count += (len(flowerbed)+1)//2
+        else:
+            count += (len(flowerbed)-prev-1)//2
+        if count >= n:
             return True
         return False
 

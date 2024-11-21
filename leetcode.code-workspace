@@ -9,10 +9,18 @@
   //这里的设置其实就是工作区设置，其可以在这个工作区覆盖用户本身的默认设置
   "settings": {  "workbench.iconTheme": "vscode-icons",
   "files.associations": {
+    "*.vue": "vue",
+    "*.wpy": "vue",
+    "*.wxml": "html",
+    "*.wxss": "css",
     ".cjson": "jsonc",
     ".wxss": "css",
-    "*.wxs": "javascript"
-  },
+    "*.wxs": "javascript",
+    "array": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp"
+},
   "emmet.includeLanguages": {
     "wxml": "html"
   },
