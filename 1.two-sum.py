@@ -12,13 +12,12 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-      for i in range(len(nums)):
-        j=target-nums[i]
-        for k in nums[i+1::]:
-          if k==j:
-            return [i,i+1+nums[i+1::].index(k)]
+        for i in range(len(nums)):
+            j = target-nums[i]
+            for k in nums[i+1:]:
+                if k == j:
+                    return [i, i+1+nums[i+1::].index(k)]
 # @lc code=end
-
 
 
 #
@@ -35,4 +34,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

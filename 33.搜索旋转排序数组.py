@@ -64,23 +64,37 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         # 定理一：只有在顺序区间内才可以通过区间两端的数值判断target是否在其中。
         # 定理二：判断顺序区间还是乱序区间，只需要对比 left 和 right 是否是顺序对即可，left <= right，顺序区间，否则乱序区间。
-        # 定理三：每次二分都会至少存在一个顺序区间。
+        # 定理三：每次二分都会至少存在一个顺序区间，这是因为只有一个不符合顺序的节点
+        # 这种二分法的意思是，我们每次二分总有一个顺序区间，我们根据这个顺序区间判断下次要二分的区间目标即可
         left = 0
         right = len(nums)-1
         while left <= right:
-            index = (left+right)//2
-            if nums[index] == target:
-                return index
-            if nums[left] <= nums[index]:
-                if nums[left] <= target <= nums[index]:
-                    right = index-1
+            middle = (left+right)//2
+            if nums[middle] == target:
+                return middle
+            # 这里用left/right比较应该都是可行的,只是判断方式的不同
+            '''
+            if nums[left] <= nums[middle]:
+                if nums[left] <= target <= nums[middle]:
+                    right = middle-1
                 else:
-                    left = index+1
+                    left = middle+1
             else:
-                if nums[index] <= target <= nums[right]:
-                    left = index+1
+                if nums[middle] <= target <= nums[right]:
+                    left = middle+1
                 else:
-                    right = index-1
+                    right = middle-1
+            '''
+            if nums[right] >= nums[middle]:
+                if nums[right] >= target >= nums[middle]:
+                    left = middle+1
+                else:
+                    right = middle-1
+            else:
+                if nums[left] <= target <= nums[middle]:
+                    right = middle-1
+                else:
+                    left = middle+1
             # 为什么做+1/-1
             # 排除中间元素：因为我们已经比较过 mid 位置的元素了，所以不需要再次检查它
             # 保持搜索范围有效：通过将 right 更新为 mid - 1，确保下一次循环中 left 和 right 之间至少有一个元素，从而避免无限循环

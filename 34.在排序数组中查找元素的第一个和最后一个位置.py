@@ -56,10 +56,13 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         # 二分查找的变体：找到头和尾巴,第一个等于的和最后一个等于的,这样会好处理一点
+        # 二分查找的左和右边
         left = 0
         right = len(nums)-1
+        # 我们要找的左侧和右侧
         first = -1
         last = -1
+        # 先找左侧
         while left <= right:
             mid = (left+right)//2
             # 这里把nums[mid] == target and mid == 0放在前面能够防止下标溢出
@@ -70,6 +73,7 @@ class Solution:
                 left = mid+1
             else:
                 right = mid-1
+        # 重置左和右边
         left = 0
         right = len(nums)-1
         while left <= right:
